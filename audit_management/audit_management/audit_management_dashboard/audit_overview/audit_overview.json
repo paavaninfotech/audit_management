@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "CAPAs by Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Audits by Type",
+   "width": "Half"
+  },
+  {
+   "chart": "Findings by Severity",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-06-21 12:22:29.514171",
+ "dashboard_name": "Audit Overview",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 11,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-06-22 11:19:27.685751",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Overview",
+ "owner": "Administrator"
+}

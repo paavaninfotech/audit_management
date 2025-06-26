@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "creation": "2025-06-21 11:44:25.872845",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "category",
+  "severity",
+  "summary"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Finding Title"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category"
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Small Text",
+   "label": "Summary"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-21 14:40:01.263791",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Report Finding",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

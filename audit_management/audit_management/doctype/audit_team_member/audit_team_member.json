@@ -1,0 +1,36 @@
+{
+ "actions": [],
+ "creation": "2025-06-21 10:42:30.160668",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "team_member",
+  "role"
+ ],
+ "fields": [
+  {
+   "fieldname": "team_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Team Member",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Data",
+   "label": "Role in Audit"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-21 14:41:42.120867",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Team Member",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,29 @@
+{
+  "doctype": "DocType",
+  "name": "Audit Report Engagement Reference",
+  "module": "Audit Management",
+  "custom": 0,
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "engagement",
+      "label": "Audit Engagement",
+      "fieldtype": "Link",
+      "options": "Audit Engagement"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Data"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

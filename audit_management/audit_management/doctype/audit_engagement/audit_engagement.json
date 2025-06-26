@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-06-21 11:05:37.353884",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "engagement_title",
+  "section_break_kuli",
+  "audit_plan",
+  "engagement_owner",
+  "start_date",
+  "column_break_ebbb",
+  "auditable_entity",
+  "status",
+  "end_date",
+  "section_break_znzh",
+  "scope",
+  "objectives",
+  "milestones",
+  "communication_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Linked Audit Plan",
+   "options": "Audit Plan",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Engagement Start"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Engagement End"
+  },
+  {
+   "fieldname": "scope",
+   "fieldtype": "Text",
+   "label": "Engagement Scope"
+  },
+  {
+   "fieldname": "objectives",
+   "fieldtype": "Text",
+   "label": "Engagement Objectives"
+  },
+  {
+   "fieldname": "milestones",
+   "fieldtype": "Table",
+   "label": "Milestones",
+   "options": "Engagement Milestone"
+  },
+  {
+   "fieldname": "communication_log",
+   "fieldtype": "Table",
+   "label": "Communication Log",
+   "options": "Communication Log Entry"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Progress\nCompleted\nOn Hold"
+  },
+  {
+  "fieldname": "completion_percent",
+  "label": "Completion %",
+  "fieldtype": "Float",
+  "read_only": 1,
+  "in_list_view": 1,
+  "precision": 1,
+  "default": "0.0"
+  },
+  {
+   "fieldname": "engagement_owner",
+   "fieldtype": "Link",
+   "label": "Engagement Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "engagement_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Engagement Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "audit_plan.auditable_entity",
+   "fieldname": "auditable_entity",
+   "fieldtype": "Data",
+   "label": "Auditable Entity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_kuli",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ebbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_znzh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "AEN-.YYYY.-.#####"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Audit Program",
+   "link_fieldname": "audit_engagement"
+  },
+  {
+   "link_doctype": "Audit Finding",
+   "link_fieldname": "audit_engagement"
+  }
+ ],
+ "modified": "2025-06-22 09:35:21.831154",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Engagement",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

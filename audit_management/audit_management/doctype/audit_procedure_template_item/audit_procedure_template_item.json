@@ -1,0 +1,29 @@
+{
+  "doctype": "DocType",
+  "name": "Audit Procedure Template Item",
+  "module": "Audit Management",
+  "custom": 0,
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "audit_procedure",
+      "label": "Audit Procedure",
+      "fieldtype": "Link",
+      "options": "Audit Procedure Catalog"
+    },
+    {
+      "fieldname": "note",
+      "label": "Note",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "doctype": "DocType",
+  "name": "Audit Report",
+  "module": "Audit Management",
+  "custom": 0,
+  "istable": 0,
+  "fields": [
+    {
+      "fieldname": "audit_plan",
+      "label": "Audit Plan",
+      "fieldtype": "Link",
+      "options": "Audit Plan",
+      "reqd": 1
+    },
+    {
+      "fieldname": "engagements",
+      "label": "Audit Engagements",
+      "fieldtype": "Table",
+      "options": "Audit Report Engagement Reference"
+    },
+    {
+      "fieldname": "findings",
+      "label": "Audit Findings",
+      "fieldtype": "Table",
+      "options": "Audit Report Finding"
+    },
+    {
+      "fieldname": "summary",
+      "label": "Report Summary",
+      "fieldtype": "Text Editor"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "\nDraft\nFinal\nArchived"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
+}

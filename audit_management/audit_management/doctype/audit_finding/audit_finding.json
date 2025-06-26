@@ -1,0 +1,175 @@
+{
+  "actions": [],
+  "autoname": "naming_series:naming_series",
+  "creation": "2025-06-21 11:44:25.730455",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "title",
+    "section_break_ayvg",
+    "audit_program",
+    "finding_date",
+    "category",
+    "severity",
+    "column_break_evbn",
+    "audit_engagement",
+    "audit_plan",
+    "auditable_entity",
+    "section_break_akro",
+    "observation",
+    "root_cause",
+    "risk_impact",
+    "status",
+    "communication_log",
+    "attachments"
+  ],
+  "fields": [
+    {
+      "fieldname": "title",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Finding Title",
+      "reqd": 1
+    },
+    {
+      "fetch_from": "audit_program.audit_engagement",
+      "fieldname": "audit_engagement",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Audit Engagement",
+      "options": "Audit Engagement",
+      "search_index": 1
+    },
+    {
+      "fieldname": "audit_program",
+      "fieldtype": "Link",
+      "label": "Audit Program",
+      "options": "Audit Program",
+      "reqd": 1,
+      "search_index": 1
+    },
+    {
+      "fieldname": "finding_date",
+      "fieldtype": "Date",
+      "label": "Finding Date"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Select",
+      "label": "Category",
+      "options": "Compliance\nOperational\nFinancial\nStrategic\nIT\nOther"
+    },
+    {
+      "fieldname": "severity",
+      "fieldtype": "Select",
+      "label": "Severity",
+      "options": "Low\nMedium\nHigh"
+    },
+    {
+      "fieldname": "observation",
+      "fieldtype": "Text",
+      "label": "Observation"
+    },
+    {
+      "fieldname": "root_cause",
+      "fieldtype": "Text",
+      "label": "Root Cause"
+    },
+    {
+      "fieldname": "risk_impact",
+      "fieldtype": "Text",
+      "label": "Risk / Impact"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nUnder Review\nClosed"
+    },
+    {
+      "fieldname": "communication_log",
+      "fieldtype": "Table",
+      "label": "Communication Log",
+      "options": "Communication Log Entry"
+    },
+    {
+      "fieldname": "attachments",
+      "fieldtype": "Attach",
+      "label": "Attachments"
+    },
+    {
+      "fieldname": "section_break_ayvg",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "column_break_evbn",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fetch_from": "audit_engagement.audit_plan",
+      "fieldname": "audit_plan",
+      "fieldtype": "Link",
+      "label": "Audit Plan",
+      "options": "Audit Plan",
+      "read_only": 1,
+      "search_index": 1
+    },
+    {
+      "fetch_from": "audit_plan.auditable_entity",
+      "fieldname": "auditable_entity",
+      "fieldtype": "Link",
+      "label": "Auditable Entity",
+      "options": "Auditable Entity",
+      "read_only": 1,
+      "search_index": 1
+    },
+    {
+      "fieldname": "section_break_akro",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Naming Series",
+      "options": "AFIN-.YYYY.-.#####"
+    },
+    {
+      "fieldname": "related_risk",
+      "label": "Related Risk",
+      "fieldtype": "Link",
+      "options": "Audit Risk"
+    },
+    {
+      "fieldname": "related_control",
+      "label": "Related Control",
+      "fieldtype": "Link",
+      "options": "Audit Control"
+    },
+    {
+      "fieldname": "related_process",
+      "label": "Related Business Process",
+      "fieldtype": "Link",
+      "options": "Audit Business Process"
+    }
+  ],
+  "links": [],
+  "modified": "2025-06-22 09:55:17.797963",
+  "modified_by": "Administrator",
+  "module": "Audit Management",
+  "name": "Audit Finding",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

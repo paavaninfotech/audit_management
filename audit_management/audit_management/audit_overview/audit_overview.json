@@ -1,0 +1,17 @@
+{
+  "doctype": "Dashboard",
+  "name": "Audit Overview",
+  "module": "Audit Management",
+  "charts": [
+    {
+      "chart": "Findings by Severity"
+    },
+    {
+      "chart": "CAPAs by Status"
+    },
+    {
+      "chart": "Audits by Type"
+    }
+  ],
+  "is_standard": 1
+}

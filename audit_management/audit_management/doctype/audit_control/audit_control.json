@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:control_id",
+ "creation": "2025-06-23 03:07:14.922361",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "control_id",
+  "description",
+  "control_type",
+  "frequency"
+ ],
+ "fields": [
+  {
+   "fieldname": "control_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Control ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Control Description"
+  },
+  {
+   "fieldname": "control_type",
+   "fieldtype": "Select",
+   "label": "Control Type",
+   "options": "Preventive\nDetective\nCorrective"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "Daily\nWeekly\nMonthly\nQuarterly\nAnnually"
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-23 03:37:29.367971",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Control",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

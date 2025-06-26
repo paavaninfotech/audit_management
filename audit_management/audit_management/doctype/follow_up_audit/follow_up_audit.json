@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "creation": "2025-06-21 11:44:25.397757",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "audit_engagement",
+  "capa",
+  "follow_up_date",
+  "reviewer",
+  "observation",
+  "status",
+  "comments",
+  "attachments",
+  "communication_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Follow-Up Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "audit_engagement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Original Audit",
+   "options": "Audit Engagement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capa",
+   "fieldtype": "Link",
+   "label": "CAPA Reference",
+   "options": "CAPA"
+  },
+  {
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow-Up Date"
+  },
+  {
+   "fieldname": "reviewer",
+   "fieldtype": "Link",
+   "label": "Reviewer",
+   "options": "User"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Text",
+   "label": "Observation"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Not Started\nIn Progress\nResolved\nUnresolved"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Text Editor",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "communication_log",
+   "fieldtype": "Table",
+   "label": "Communication Log",
+   "options": "Communication Log Entry"
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-21 14:40:24.639564",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Follow-Up Audit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "creation": "2025-06-23 03:07:14.638112",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "process_id",
+  "process_name",
+  "description",
+  "department"
+ ],
+ "fields": [
+  {
+   "fieldname": "process_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Process ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Process Description"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "process_name",
+   "fieldtype": "Data",
+   "label": "Process Name"
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-23 03:29:01.586506",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Business Process",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

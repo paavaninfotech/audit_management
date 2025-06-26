@@ -1,0 +1,9 @@
+{
+  "doctype": "Report",
+  "name": "Open Audit Findings",
+  "report_name": "Open Audit Findings",
+  "ref_doctype": "Audit Finding",
+  "report_type": "Script Report",
+  "is_standard": "Yes",
+  "module": "Audit Management"
+}

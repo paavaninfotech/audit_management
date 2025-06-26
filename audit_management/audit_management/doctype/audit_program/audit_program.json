@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-06-21 11:44:26.251189",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "section_break_eoee",
+  "audit_engagement",
+  "engagement_milestone",
+  "column_break_ealk",
+  "audit_plan",
+  "auditable_entity",
+  "section_break_pdlm",
+  "objective",
+  "prepared_by",
+  "prepared_on",
+  "procedures",
+  "status",
+  "remarks",
+  "procedure_template"
+ ],
+ "fields": [
+  {
+   "fieldname": "procedure_template",
+   "fieldtype": "Link",
+   "label": "Procedure Template",
+   "options": "Audit Procedure Template"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Program Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "audit_engagement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Engagement",
+   "options": "Audit Engagement",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.audit_engagement",
+   "description": "Select the milestone this audit program belongs to",
+   "fieldname": "engagement_milestone",
+   "fieldtype": "Link",
+   "label": "Engagement Milestone",
+   "options": "Engagement Milestone"
+  },
+  {
+   "fieldname": "objective",
+   "fieldtype": "Small Text",
+   "label": "Objective"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "prepared_on",
+   "fieldtype": "Date",
+   "label": "Prepared On"
+  },
+  {
+   "fieldname": "procedures",
+   "fieldtype": "Table",
+   "label": "Procedures",
+   "options": "Audit Procedure"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIssued\nReviewed\nFinalized"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "fetch_from": "audit_engagement.audit_plan",
+   "fieldname": "audit_plan",
+   "fieldtype": "Data",
+   "label": "Audit Plan"
+  },
+  {
+   "fetch_from": "audit_engagement.auditable_entity",
+   "fieldname": "auditable_entity",
+   "fieldtype": "Data",
+   "label": "Auditable Entity"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "APRO-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "section_break_eoee",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ealk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pdlm",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Audit Finding",
+   "link_fieldname": "audit_program"
+  }
+ ],
+ "modified": "2025-06-24 02:11:46.821833",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Program",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

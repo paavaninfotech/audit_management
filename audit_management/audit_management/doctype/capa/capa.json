@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-06-22 02:01:09.865003",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "reference_finding",
+  "category",
+  "severity",
+  "finding_date",
+  "column_break_xqpq",
+  "audit_program",
+  "audit_engagement",
+  "audit_plan",
+  "auditable_entity",
+  "section_break_mbif",
+  "risk_impact",
+  "description",
+  "action_owner",
+  "target_date",
+  "actual_completion_date",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_finding",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reference Finding",
+   "options": "Audit Finding",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "CAPA Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "action_owner",
+   "fieldtype": "Link",
+   "label": "Action Owner",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "target_date",
+   "fieldtype": "Date",
+   "label": "Target Completion Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "actual_completion_date",
+   "fieldtype": "Date",
+   "label": "Actual Completion Date"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nIn Progress\nClosed\nOverdue"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CAPA",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_xqpq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "reference_finding.audit_program",
+   "fieldname": "audit_program",
+   "fieldtype": "Link",
+   "label": "Audit Program",
+   "options": "Audit Program",
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_mbif",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "reference_finding.audit_engagement",
+   "fieldname": "audit_engagement",
+   "fieldtype": "Link",
+   "label": "Audit Engagement",
+   "options": "Audit Engagement",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reference_finding.audit_plan",
+   "fieldname": "audit_plan",
+   "fieldtype": "Link",
+   "label": "Audit Plan",
+   "options": "Audit Plan",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reference_finding.auditable_entity",
+   "fieldname": "auditable_entity",
+   "fieldtype": "Link",
+   "label": "Auditable Entity",
+   "options": "Auditable Entity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CAPA-.YYYY.-.#####"
+  },
+  {
+   "fetch_from": "reference_finding.category",
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reference_finding.severity",
+   "fieldname": "severity",
+   "fieldtype": "Data",
+   "label": "Severity",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reference_finding.risk_impact",
+   "fieldname": "risk_impact",
+   "fieldtype": "Text",
+   "label": "Risk/Impact",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reference_finding.finding_date",
+   "fieldname": "finding_date",
+   "fieldtype": "Date",
+   "label": "Finding Date",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-22 11:06:20.841739",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "CAPA",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

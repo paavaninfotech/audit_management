@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "creation": "2025-06-23 04:03:15.711066",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "procedure_id",
+  "procedure_title",
+  "expected_outcome",
+  "test_steps",
+  "related_risk",
+  "related_control",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "procedure_id",
+   "fieldtype": "Link",
+   "label": "Procedure ID",
+   "options": "Audit Procedure Catalog"
+  },
+  {
+   "fetch_from": "procedure_id.procedure_title",
+   "fieldname": "procedure_title",
+   "fieldtype": "Data",
+   "label": "Procedure Title"
+  },
+  {
+   "fetch_from": "procedure_id.expected_outcome",
+   "fieldname": "expected_outcome",
+   "fieldtype": "Data",
+   "label": "Expected Outcome"
+  },
+  {
+   "fetch_from": "procedure_id.test_steps",
+   "fieldname": "test_steps",
+   "fieldtype": "Text",
+   "label": "Test Steps"
+  },
+  {
+   "fetch_from": "procedure_id.related_risk",
+   "fieldname": "related_risk",
+   "fieldtype": "Link",
+   "label": "Related Risk",
+   "options": "Audit Risk"
+  },
+  {
+   "fetch_from": "procedure_id.related_control",
+   "fieldname": "related_control",
+   "fieldtype": "Link",
+   "label": "Related Control",
+   "options": "Audit Control"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPlanned\nIn Progress\nCompleted"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-23 05:34:53.014650",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Procedure",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,221 @@
+{
+ "charts": [
+  {
+   "chart_name": "Audit Plan by Status",
+   "label": "Audit Plan by Status"
+  }
+ ],
+ "content": "[{\"id\":\"7ep9W3V71U\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Audit Management</span>\",\"col\":12}},{\"id\":\"9Wsa4vbeLi\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Audit Plan by Status\",\"col\":12}},{\"id\":\"s0g8XcWjJ6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\",\"col\":12}},{\"id\":\"Wwx7Knvh5f\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Audit Dashboard\",\"col\":3}},{\"id\":\"vIXfLSEXP3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GQTvJBl9kS\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"qO5_aIVwBS\",\"type\":\"card\",\"data\":{\"card_name\":\"Audit Universe\",\"col\":4}},{\"id\":\"hCgHBltRTi\",\"type\":\"card\",\"data\":{\"card_name\":\"Audit Management\",\"col\":4}},{\"id\":\"9-UXLCLsuf\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2025-06-21 14:09:47.187111",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "mark-as-read",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Audit Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Management",
+   "link_count": 8,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Auditable Entity",
+   "link_count": 0,
+   "link_to": "Auditable Entity",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Plan",
+   "link_count": 0,
+   "link_to": "Audit Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Engagement",
+   "link_count": 0,
+   "link_to": "Audit Engagement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Program",
+   "link_count": 0,
+   "link_to": "Audit Program",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Finding",
+   "link_count": 0,
+   "link_to": "Audit Finding",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CAPA",
+   "link_count": 0,
+   "link_to": "CAPA",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Report",
+   "link_count": 0,
+   "link_to": "Audit Report",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Follow-Up Audit",
+   "link_count": 0,
+   "link_to": "Follow-Up Audit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "CAPA Tracker",
+   "link_count": 0,
+   "link_to": "CAPA Tracker",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Open Audit Findings",
+   "link_count": 0,
+   "link_to": "Open Audit Findings",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Audit Finding",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Universe",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Risk",
+   "link_count": 0,
+   "link_to": "Audit Risk",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Control",
+   "link_count": 0,
+   "link_to": "Audit Control",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Procedure Catalog",
+   "link_count": 0,
+   "link_to": "Audit Procedure Catalog",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Business Process",
+   "link_count": 0,
+   "link_to": "Audit Business Process",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Procedure Template",
+   "link_count": 0,
+   "link_to": "Audit Procedure Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-06-25 03:57:39.982634",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 33.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Audit Dashboard",
+   "link_to": "Audit Overview",
+   "type": "Dashboard"
+  }
+ ],
+ "title": "Audit Management"
+}

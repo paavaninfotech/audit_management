@@ -1,0 +1,56 @@
+{
+  "doctype": "DocType",
+  "name": "Audit Report Finding",
+  "module": "Audit Management",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "finding",
+      "label": "Finding Ref",
+      "fieldtype": "Link",
+      "options": "Audit Finding",
+      "in_list_view": 0
+    },
+    {
+      "fieldname": "finding_title",
+      "label": "Finding Title",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "severity",
+      "label": "Severity",
+      "fieldtype": "Select",
+      "options": "Low\nMedium\nHigh"
+    },
+    {
+      "fieldname": "cause",
+      "label": "Cause",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "impact",
+      "label": "Impact",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "recommendation",
+      "label": "Recommendation",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "audit_engagement",
+      "label": "Audit Engagement",
+      "fieldtype": "Link",
+      "options": "Audit Engagement"
+    }
+  ],
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

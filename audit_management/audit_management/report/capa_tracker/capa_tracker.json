@@ -1,0 +1,9 @@
+{
+  "doctype": "Report",
+  "name": "CAPA Tracker",
+  "report_name": "CAPA Tracker",
+  "ref_doctype": "CAPA",
+  "report_type": "Script Report",
+  "is_standard": "Yes",
+  "module": "Audit Management"
+}

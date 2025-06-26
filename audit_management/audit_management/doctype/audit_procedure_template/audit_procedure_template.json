@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "autoname": "field:template_name",
+ "creation": "2025-06-23 05:14:06.180040",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "description",
+  "procedures"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "procedures",
+   "fieldtype": "Table",
+   "label": "Procedures",
+   "options": "Audit Procedure Template Item"
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-23 05:28:07.065784",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Procedure Template",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

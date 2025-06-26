@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "autoname": "field:audit_title",
+ "creation": "2025-06-21 10:42:30.019603",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_title",
+  "section_break_cwbr",
+  "audit_type",
+  "auditable_entity",
+  "start_date",
+  "column_break_cbzf",
+  "client",
+  "company",
+  "fiscal_year",
+  "end_date",
+  "section_break_gjzw",
+  "objective",
+  "scope",
+  "audit_team",
+  "status",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Audit Title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "auditable_entity.audit_type",
+   "fieldname": "audit_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Audit Type",
+   "options": "Internal\nExternal",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.audit_type=='External'",
+   "fetch_from": "auditable_entity.client",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.audit_type=='Internal'",
+   "fetch_from": "auditable_entity.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "auditable_entity",
+   "fieldtype": "Link",
+   "label": "Auditable Entity",
+   "options": "Auditable Entity",
+   "search_index": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Fiscal Year",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Audit Period Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Audit Period End Date"
+  },
+  {
+   "fieldname": "objective",
+   "fieldtype": "Small Text",
+   "label": "Audit Objective"
+  },
+  {
+   "fieldname": "scope",
+   "fieldtype": "Text",
+   "label": "Audit Scope"
+  },
+  {
+   "fieldname": "audit_team",
+   "fieldtype": "Table",
+   "label": "Audit Team",
+   "options": "Audit Team Member"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Planned\nIn Progress\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "section_break_cwbr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_cbzf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gjzw",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Audit Engagement",
+   "link_fieldname": "audit_plan"
+  },
+  {
+   "link_doctype": "Audit Program",
+   "link_fieldname": "audit_plan"
+  },
+  {
+   "link_doctype": "Audit Finding",
+   "link_fieldname": "audit_plan"
+  }
+ ],
+ "modified": "2025-06-22 12:53:57.269365",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Plan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
