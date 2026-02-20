@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "field:risk_id",
  "creation": "2025-06-23 03:07:14.508187",
  "doctype": "DocType",
@@ -47,7 +48,7 @@
   }
  ],
  "links": [],
- "modified": "2025-06-23 03:37:48.051258",
+ "modified": "2026-02-02 03:37:10.677908",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Risk",
@@ -62,7 +63,10 @@
    "write": 1
   }
  ],
+ "search_fields": "title",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "title"
 }

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "field:procedure_id",
  "creation": "2025-06-23 05:14:06.464240",
  "doctype": "DocType",
@@ -8,9 +9,7 @@
   "procedure_id",
   "procedure_title",
   "expected_outcome",
-  "test_steps",
-  "related_risk",
-  "related_control"
+  "test_steps"
  ],
  "fields": [
   {
@@ -31,18 +30,6 @@
    "label": "Test Steps"
   },
   {
-   "fieldname": "related_risk",
-   "fieldtype": "Link",
-   "label": "Related Risk",
-   "options": "Audit Risk"
-  },
-  {
-   "fieldname": "related_control",
-   "fieldtype": "Link",
-   "label": "Related Control",
-   "options": "Audit Control"
-  },
-  {
    "fieldname": "procedure_id",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -51,8 +38,17 @@
    "unique": 1
   }
  ],
- "links": [],
- "modified": "2025-06-23 05:25:12.603452",
+ "links": [
+  {
+   "link_doctype": "Audit Procedure Risk",
+   "link_fieldname": "audit_procedure"
+  },
+  {
+   "link_doctype": "Audit Procedure Control",
+   "link_fieldname": "audit_procedure"
+  }
+ ],
+ "modified": "2026-02-03 06:02:12.404880",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Procedure Catalog",

@@ -141,7 +141,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Audit Universe",
-   "link_count": 5,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -179,6 +179,26 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Audit Procedure Risk",
+   "link_count": 0,
+   "link_to": "Audit Procedure Risk",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Audit Procedure Control",
+   "link_count": 0,
+   "link_to": "Audit Procedure Control",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Audit Business Process",
    "link_count": 0,
    "link_to": "Audit Business Process",
@@ -197,7 +217,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-06-25 03:57:39.982634",
+ "modified": "2026-02-03 05:50:57.334179",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Management",

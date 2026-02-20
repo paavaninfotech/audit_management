@@ -1,48 +1,73 @@
 {
-  "doctype": "DocType",
-  "name": "Audit Report",
-  "module": "Audit Management",
-  "custom": 0,
-  "istable": 0,
-  "fields": [
-    {
-      "fieldname": "audit_plan",
-      "label": "Audit Plan",
-      "fieldtype": "Link",
-      "options": "Audit Plan",
-      "reqd": 1
-    },
-    {
-      "fieldname": "engagements",
-      "label": "Audit Engagements",
-      "fieldtype": "Table",
-      "options": "Audit Report Engagement Reference"
-    },
-    {
-      "fieldname": "findings",
-      "label": "Audit Findings",
-      "fieldtype": "Table",
-      "options": "Audit Report Finding"
-    },
-    {
-      "fieldname": "summary",
-      "label": "Report Summary",
-      "fieldtype": "Text Editor"
-    },
-    {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "\nDraft\nFinal\nArchived"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ]
+ "actions": [],
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-06-22 15:44:09.115258",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "audit_plan",
+  "engagements",
+  "findings",
+  "summary",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_plan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Plan",
+   "options": "Audit Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "engagements",
+   "fieldtype": "Table",
+   "label": "Audit Engagements",
+   "options": "Audit Report Engagement Reference"
+  },
+  {
+   "fieldname": "findings",
+   "fieldtype": "Table",
+   "label": "Audit Findings",
+   "options": "Audit Report Finding"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Text Editor",
+   "label": "Report Summary"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nDraft\nFinal\nArchived"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "AREP-.YYYY.-.#####"
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-26 04:09:03.567412",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Report",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
 }

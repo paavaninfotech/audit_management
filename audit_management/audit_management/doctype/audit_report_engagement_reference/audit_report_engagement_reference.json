@@ -1,29 +1,35 @@
 {
-  "doctype": "DocType",
-  "name": "Audit Report Engagement Reference",
-  "module": "Audit Management",
-  "custom": 0,
-  "istable": 1,
-  "fields": [
-    {
-      "fieldname": "engagement",
-      "label": "Audit Engagement",
-      "fieldtype": "Link",
-      "options": "Audit Engagement"
-    },
-    {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Data"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ]
+ "actions": [],
+ "creation": "2025-06-22 15:50:38.495585",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "engagement",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "engagement",
+   "fieldtype": "Link",
+   "label": "Audit Engagement",
+   "options": "Audit Engagement"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-02 02:54:25.785696",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Report Engagement Reference",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
 }

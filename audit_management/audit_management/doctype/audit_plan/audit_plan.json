@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "field:audit_title",
  "creation": "2025-06-21 10:42:30.019603",
  "doctype": "DocType",
@@ -133,7 +134,7 @@
    "link_fieldname": "audit_plan"
   }
  ],
- "modified": "2025-06-22 12:53:57.269365",
+ "modified": "2026-02-02 02:53:32.393810",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Plan",

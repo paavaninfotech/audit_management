@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-03 05:24:54.930222",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_procedure",
+  "audit_control",
+  "column_break_zihd",
+  "procedure_title",
+  "control_title",
+  "section_break_nxsh",
+  "control_description",
+  "section_break_xxti",
+  "control_type",
+  "column_break_jqxb",
+  "frequency"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_procedure",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Procedure",
+   "options": "Audit Procedure Catalog",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zihd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "audit_procedure.procedure_title",
+   "fieldname": "procedure_title",
+   "fieldtype": "Data",
+   "label": "Procedure Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "audit_control",
+   "fieldtype": "Link",
+   "label": "Audit Control",
+   "options": "Audit Control",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "audit_control.control_title",
+   "fieldname": "control_title",
+   "fieldtype": "Data",
+   "label": "Control Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_nxsh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "audit_control.description",
+   "fieldname": "control_description",
+   "fieldtype": "Text",
+   "label": "Control Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xxti",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "audit_control.control_type",
+   "fieldname": "control_type",
+   "fieldtype": "Data",
+   "label": "Control Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jqxb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "audit_control.frequency",
+   "fieldname": "frequency",
+   "fieldtype": "Data",
+   "label": "Frequency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-03 06:01:22.371116",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Procedure Control",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

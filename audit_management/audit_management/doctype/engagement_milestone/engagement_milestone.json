@@ -1,61 +1,63 @@
 {
-  "doctype": "DocType",
-  "name": "Engagement Milestone",
-  "module": "Audit Management",
-  "istable": 1,
-  "field_order": [
-    "milestone",
-    "sequence",
-    "due_date",
-    "actual_date",
-    "status",
-    "remarks"
-  ],
-  "fields": [
-    {
-      "fieldname": "milestone",
-      "label": "Milestone",
-      "fieldtype": "Data",
-      "reqd": 1,
-      "in_list_view": 1
-    },
-    {
-      "fieldname": "sequence",
-      "label": "Sequence No",
-      "fieldtype": "Int",
-      "in_list_view": 0
-    },
-    {
-      "fieldname": "due_date",
-      "label": "Due Date",
-      "fieldtype": "Date",
-      "in_list_view": 1
-    },
-    {
-      "fieldname": "actual_date",
-      "label": "Actual Date",
-      "fieldtype": "Date",
-      "in_list_view": 0
-    },
-    {
-      "fieldname": "status",
-      "label": "Status",
-      "fieldtype": "Select",
-      "options": "Pending\nIn Progress\nDone",
-      "in_list_view": 1
-    },
-    {
-      "fieldname": "remarks",
-      "label": "Remarks",
-      "fieldtype": "Small Text",
-      "in_list_view": 0
-    }
-  ],
-  "sort_field": "sequence",
-  "sort_order": "ASC",
-  "engine": "InnoDB",
-  "permissions": [],
-  "actions": [],
-  "links": [],
-  "states": []
+ "actions": [],
+ "creation": "2025-06-23 15:55:33.838725",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "milestone",
+  "sequence",
+  "due_date",
+  "actual_date",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "milestone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Milestone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "Sequence No"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "actual_date",
+   "fieldtype": "Date",
+   "label": "Actual Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nIn Progress\nDone"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-02 02:54:57.399885",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Engagement Milestone",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "sequence",
+ "sort_order": "ASC",
+ "states": []
 }

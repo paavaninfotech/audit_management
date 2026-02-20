@@ -1,29 +1,60 @@
 {
-  "doctype": "DocType",
-  "name": "Audit Procedure Template Item",
-  "module": "Audit Management",
-  "custom": 0,
-  "istable": 1,
-  "fields": [
-    {
-      "fieldname": "audit_procedure",
-      "label": "Audit Procedure",
-      "fieldtype": "Link",
-      "options": "Audit Procedure Catalog"
-    },
-    {
-      "fieldname": "note",
-      "label": "Note",
-      "fieldtype": "Small Text"
-    }
-  ],
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1
-    }
-  ]
+ "actions": [],
+ "creation": "2025-06-23 05:14:06.284593",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_procedure",
+  "procedure_title",
+  "test_steps",
+  "expected_outcome",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_procedure",
+   "fieldtype": "Link",
+   "label": "Audit Procedure",
+   "options": "Audit Procedure Catalog",
+   "search_index": 1
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  },
+  {
+   "fetch_from": "audit_procedure.procedure_title",
+   "fieldname": "procedure_title",
+   "fieldtype": "Data",
+   "label": "Procedure Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_procedure.expected_outcome",
+   "fieldname": "expected_outcome",
+   "fieldtype": "Data",
+   "label": "Expected Outcome",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_procedure.test_steps",
+   "fieldname": "test_steps",
+   "fieldtype": "Text",
+   "label": "Test Steps",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-02 05:38:44.856445",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Procedure Template Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
 }

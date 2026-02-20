@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2026-02-03 04:06:40.793390",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_procedure",
+  "audit_risk",
+  "column_break_hicy",
+  "procedure_title",
+  "risk_title",
+  "section_break_xpus",
+  "risk_description",
+  "section_break_lbub",
+  "risk_category",
+  "column_break_yurw",
+  "severity"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_procedure",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Procedure",
+   "options": "Audit Procedure Catalog",
+   "reqd": 1
+  },
+  {
+   "fieldname": "audit_risk",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Risk",
+   "options": "Audit Risk",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "audit_procedure.procedure_title",
+   "fieldname": "procedure_title",
+   "fieldtype": "Data",
+   "label": "Procedure Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_risk.title",
+   "fieldname": "risk_title",
+   "fieldtype": "Data",
+   "label": "Risk Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hicy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xpus",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "audit_risk.description",
+   "fieldname": "risk_description",
+   "fieldtype": "Text",
+   "label": "Risk Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_lbub",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "audit_risk.risk_category",
+   "fieldname": "risk_category",
+   "fieldtype": "Data",
+   "label": "Risk Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yurw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "audit_risk.severity",
+   "fieldname": "severity",
+   "fieldtype": "Data",
+   "label": "Severity",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-03 04:44:58.569733",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Procedure Risk",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

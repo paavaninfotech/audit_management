@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "field:control_id",
  "creation": "2025-06-23 03:07:14.922361",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "control_id",
+  "control_title",
   "description",
   "control_type",
   "frequency"
@@ -36,10 +38,16 @@
    "fieldtype": "Select",
    "label": "Frequency",
    "options": "Daily\nWeekly\nMonthly\nQuarterly\nAnnually"
+  },
+  {
+   "fieldname": "control_title",
+   "fieldtype": "Data",
+   "label": "Control Title",
+   "reqd": 1
   }
  ],
  "links": [],
- "modified": "2025-06-23 03:37:29.367971",
+ "modified": "2026-02-03 05:30:01.355810",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Control",

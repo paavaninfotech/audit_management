@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2025-06-22 02:01:09.865003",
  "doctype": "DocType",
@@ -151,7 +152,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-22 11:06:20.841739",
+ "modified": "2026-02-02 02:55:33.643667",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "CAPA",
