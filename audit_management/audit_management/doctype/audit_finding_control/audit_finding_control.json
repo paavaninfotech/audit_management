@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-13 01:02:17.481532",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_control",
+  "audit_control_title",
+  "control_type",
+  "control_description",
+  "frequency",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_control",
+   "fieldtype": "Link",
+   "label": "Audit Control",
+   "options": "Audit Control"
+  },
+  {
+   "fetch_from": "audit_control.control_title",
+   "fieldname": "audit_control_title",
+   "fieldtype": "Data",
+   "label": "Audit Control Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_control.control_type",
+   "fieldname": "control_type",
+   "fieldtype": "Data",
+   "label": "Control Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_control.description",
+   "fieldname": "control_description",
+   "fieldtype": "Text",
+   "label": "Control Description",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_control.frequency",
+   "fieldname": "frequency",
+   "fieldtype": "Data",
+   "label": "Frequency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-13 01:05:56.169483",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Finding Control",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

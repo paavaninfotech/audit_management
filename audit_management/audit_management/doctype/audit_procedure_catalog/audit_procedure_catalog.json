@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:procedure_id",
  "creation": "2025-06-23 05:14:06.464240",
@@ -48,8 +49,8 @@
    "link_fieldname": "audit_procedure"
   }
  ],
- "modified": "2026-02-03 06:02:12.404880",
- "modified_by": "Administrator",
+ "modified": "2026-03-10 01:34:09.781541",
+ "modified_by": "sales@paavaninfotech.com",
  "module": "Audit Management",
  "name": "Audit Procedure Catalog",
  "naming_rule": "By fieldname",
@@ -63,6 +64,8 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
+ "search_fields": "procedure_title",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

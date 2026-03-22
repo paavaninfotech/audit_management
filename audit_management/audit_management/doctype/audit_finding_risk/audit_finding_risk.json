@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-13 00:48:37.886887",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "audit_risk",
+  "audit_risk_title",
+  "risk_description",
+  "risk_category",
+  "severity",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "audit_risk",
+   "fieldtype": "Link",
+   "label": "Audit Risk",
+   "options": "Audit Risk"
+  },
+  {
+   "fetch_from": "audit_risk.title",
+   "fieldname": "audit_risk_title",
+   "fieldtype": "Data",
+   "label": "Audit Risk Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_risk.description",
+   "fieldname": "risk_description",
+   "fieldtype": "Text",
+   "label": "Risk Description",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_risk.risk_category",
+   "fieldname": "risk_category",
+   "fieldtype": "Data",
+   "label": "Risk Category",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_risk.severity",
+   "fieldname": "severity",
+   "fieldtype": "Data",
+   "label": "Severity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-13 01:01:37.564434",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Finding Risk",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

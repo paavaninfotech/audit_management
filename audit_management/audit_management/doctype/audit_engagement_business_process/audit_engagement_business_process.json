@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-13 15:25:06.624871",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "business_process",
+  "business_process_name",
+  "in_scope",
+  "risk_focus",
+  "remarks",
+  "lead_auditor",
+  "planned_start_date",
+  "planned_end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "business_process",
+   "fieldtype": "Link",
+   "label": "Business Process",
+   "options": "Audit Business Process"
+  },
+  {
+   "fetch_from": "business_process.process_name",
+   "fieldname": "business_process_name",
+   "fieldtype": "Data",
+   "label": "Business Process Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "in_scope",
+   "fieldtype": "Check",
+   "label": "In Scope"
+  },
+  {
+   "fieldname": "risk_focus",
+   "fieldtype": "Small Text",
+   "label": "Risk Focus"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "lead_auditor",
+   "fieldtype": "Link",
+   "label": "Lead Auditor",
+   "options": "User"
+  },
+  {
+   "fieldname": "planned_start_date",
+   "fieldtype": "Date",
+   "label": "Planned Start Date"
+  },
+  {
+   "fieldname": "planned_end_date",
+   "fieldtype": "Date",
+   "label": "Planned End Date"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-13 15:27:51.440697",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Engagement Business Process",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

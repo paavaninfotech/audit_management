@@ -1,0 +1,381 @@
+{% set company_name = frappe.db.get_single_value('Global Defaults', 'default_company') or '' %}
+{% set report_title = doc.report_title or doc.name %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ report_title }}</title>
+    <style>
+        @page {
+            margin: 18mm 14mm 16mm 14mm;
+            size: A4;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1f2937;
+            font-size: 11px;
+            line-height: 1.45;
+        }
+        .page-break { page-break-after: always; }
+        .header {
+            border-bottom: 3px solid #1f4e78;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+        .title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #12344d;
+            margin: 0 0 6px 0;
+        }
+        .subtitle {
+            font-size: 13px;
+            color: #4b5563;
+            margin: 0;
+        }
+        .meta-table, .grid-table, .finding-table, .engagement-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .meta-table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            border: 1px solid #d1d5db;
+        }
+        .meta-label {
+            width: 18%;
+            background: #eef4f8;
+            font-weight: 700;
+            color: #12344d;
+        }
+        .section {
+            margin-top: 16px;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #12344d;
+            border-left: 5px solid #1f4e78;
+            padding-left: 8px;
+            margin: 0 0 10px 0;
+        }
+        .summary-grid {
+            display: table;
+            width: 100%;
+            border-spacing: 8px 0;
+            table-layout: fixed;
+            margin: 8px 0 4px 0;
+        }
+        .summary-card {
+            display: table-cell;
+            border: 1px solid #dbe3ea;
+            background: #f8fbfd;
+            border-radius: 6px;
+            padding: 10px 12px;
+            text-align: center;
+        }
+        .summary-value {
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f4e78;
+            margin-bottom: 4px;
+        }
+        .summary-label {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #6b7280;
+            letter-spacing: 0.5px;
+        }
+        .narrative-box {
+            border: 1px solid #d1d5db;
+            background: #fcfcfd;
+            padding: 10px 12px;
+            min-height: 48px;
+        }
+        .engagement-table th, .engagement-table td,
+        .finding-table th, .finding-table td {
+            border: 1px solid #d1d5db;
+            padding: 7px 8px;
+            vertical-align: top;
+        }
+        .engagement-table th, .finding-table th {
+            background: #eef4f8;
+            color: #12344d;
+            font-weight: 700;
+            text-align: left;
+        }
+        .finding-card {
+            border: 1px solid #cfd8e3;
+            margin-bottom: 14px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .finding-card-header {
+            background: #eef4f8;
+            padding: 10px 12px;
+            border-bottom: 1px solid #d1d5db;
+        }
+        .finding-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #12344d;
+            margin: 0;
+        }
+        .chip {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-right: 6px;
+            border: 1px solid #c7d2da;
+            background: #fff;
+        }
+        .finding-meta {
+            margin-top: 6px;
+            font-size: 10px;
+            color: #4b5563;
+        }
+        .finding-body {
+            padding: 10px 12px;
+        }
+        .finding-table td.label-cell {
+            width: 17%;
+            background: #fafbfd;
+            font-weight: 700;
+            color: #374151;
+        }
+        .footer-note {
+            margin-top: 18px;
+            font-size: 10px;
+            color: #6b7280;
+            text-align: center;
+        }
+        .small-muted { color: #6b7280; font-size: 10px; }
+        .cover-box {
+            border: 1px solid #d1d5db;
+            padding: 12px 14px;
+            background: linear-gradient(180deg, #f8fbfd 0%, #ffffff 100%);
+        }
+        ul.compact {
+            margin: 4px 0 0 16px;
+            padding: 0;
+        }
+        ul.compact li { margin: 2px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="title">Audit Report</div>
+        <p class="subtitle">{{ report_title }}</p>
+    </div>
+
+    <div class="cover-box">
+        <table class="meta-table">
+            <tr>
+                <td class="meta-label">Report ID</td>
+                <td>{{ doc.name }}</td>
+                <td class="meta-label">Report Date</td>
+                <td>{{ frappe.utils.formatdate(doc.report_date) if doc.report_date else '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">Audit Plan</td>
+                <td>{{ doc.audit_plan or '' }}</td>
+                <td class="meta-label">Status</td>
+                <td>{{ doc.report_status or doc.status or '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">Prepared By</td>
+                <td>{{ doc.prepared_by or '' }}</td>
+                <td class="meta-label">Reviewed By</td>
+                <td>{{ doc.reviewed_by or '' }}</td>
+            </tr>
+            {% if company_name %}
+            <tr>
+                <td class="meta-label">Company</td>
+                <td colspan="3">{{ company_name }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Report Snapshot</div>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <span class="summary-value">{{ doc.total_findings or 0 }}</span>
+                <span class="summary-label">Total Findings</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-value">{{ doc.high_severity_findings or 0 }}</span>
+                <span class="summary-label">High Severity</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-value">{{ doc.medium_severity_findings or 0 }}</span>
+                <span class="summary-label">Medium Severity</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-value">{{ doc.low_severity_findings or 0 }}</span>
+                <span class="summary-label">Low Severity</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-value">{{ doc.open_capas or 0 }}</span>
+                <span class="summary-label">Open CAPAs</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-value">{{ doc.overdue_capas or 0 }}</span>
+                <span class="summary-label">Overdue CAPAs</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Executive Summary</div>
+        <div class="narrative-box">{{ doc.executive_summary or '' }}</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Scope and Methodology</div>
+        <table class="meta-table">
+            <tr>
+                <td class="meta-label">Scope of Review</td>
+                <td>{{ doc.scope_of_review or '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">Audit Objectives</td>
+                <td>{{ doc.audit_objectives or '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">Methodology</td>
+                <td>{{ doc.methodology or '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">Overall Conclusion</td>
+                <td>{{ doc.overall_conclusion or '' }}</td>
+            </tr>
+            {% if doc.management_response_summary or doc.capa_summary or doc.high_priority_actions %}
+            <tr>
+                <td class="meta-label">Management Response Summary</td>
+                <td>{{ doc.management_response_summary or '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">CAPA Summary</td>
+                <td>{{ doc.capa_summary or '' }}</td>
+            </tr>
+            <tr>
+                <td class="meta-label">High Priority Actions</td>
+                <td>{{ doc.high_priority_actions or '' }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Referenced Engagements</div>
+        <table class="engagement-table">
+            <thead>
+                <tr>
+                    <th style="width: 8%;">#</th>
+                    <th style="width: 52%;">Engagement</th>
+                    <th style="width: 20%;">Status</th>
+                    <th style="width: 20%;">Reference</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if doc.engagements %}
+                    {% for row in doc.engagements %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ row.engagement or row.audit_engagement or '' }}</td>
+                        <td>{{ row.status or '' }}</td>
+                        <td>{{ row.name or '' }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="small-muted">No engagement references added.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section page-break-before">
+        <div class="section-title">Detailed Findings</div>
+
+        {% if doc.group_findings_by and doc.group_findings_by != 'None' %}
+            <div class="small-muted" style="margin-bottom:8px;">Grouped by: {{ doc.group_findings_by }}</div>
+        {% endif %}
+
+        {% if doc.findings %}
+            {% for f in doc.findings %}
+                <div class="finding-card">
+                    <div class="finding-card-header">
+                        <p class="finding-title">{{ loop.index }}. {{ f.finding_title or f.title or f.finding or 'Finding' }}</p>
+                        <div class="finding-meta">
+                            <span class="chip">Severity: {{ f.severity or '' }}</span>
+                            {% if f.finding_status %}<span class="chip">Finding Status: {{ f.finding_status }}</span>{% endif %}
+                            {% if f.capa_status %}<span class="chip">CAPA Status: {{ f.capa_status }}</span>{% endif %}
+                            {% if f.audit_engagement %}<span class="chip">Engagement: {{ f.audit_engagement }}</span>{% endif %}
+                            {% if f.related_process %}<span class="chip">Process: {{ f.related_process }}</span>{% endif %}
+                        </div>
+                    </div>
+                    <div class="finding-body">
+                        <table class="finding-table">
+                            <tr>
+                                <td class="label-cell">Description</td>
+                                <td>{{ f.description or '' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Cause</td>
+                                <td>{{ f.cause or '' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Impact</td>
+                                <td>{{ f.impact or '' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Recommendation</td>
+                                <td>{{ f.recommendation or '' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Management Owner</td>
+                                <td>{{ f.management_owner or '' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label-cell">Target Closure Date</td>
+                                <td>{{ frappe.utils.formatdate(f.target_closure_date) if f.target_closure_date else '' }}</td>
+                            </tr>
+                            {% if f.is_capa_overdue is defined or f.related_risks or f.related_controls %}
+                            <tr>
+                                <td class="label-cell">Tracking</td>
+                                <td>
+                                    {% if f.is_capa_overdue %}<strong>Overdue CAPA:</strong> Yes<br>{% endif %}
+                                    {% if f.related_risks %}<strong>Related Risks:</strong> {{ f.related_risks }}<br>{% endif %}
+                                    {% if f.related_controls %}<strong>Related Controls:</strong> {{ f.related_controls }}{% endif %}
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </table>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="narrative-box small-muted">No findings added to this report.</div>
+        {% endif %}
+    </div>
+
+    <div class="section">
+        <div class="section-title">Conclusion</div>
+        <div class="narrative-box">{{ doc.overall_conclusion or '' }}</div>
+    </div>
+
+    <div class="footer-note">
+        This report was generated from the Audit Management System on {{ frappe.utils.formatdate(frappe.utils.nowdate()) }}.
+    </div>
+
+</body>
+</html>

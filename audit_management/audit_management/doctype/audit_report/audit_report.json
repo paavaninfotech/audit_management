@@ -5,12 +5,32 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "report_header_section",
   "naming_series",
+  "report_title",
+  "prepared_by",
+  "column_break_styc",
   "audit_plan",
+  "report_date",
+  "reviewed_by",
+  "scope_and_context_section",
+  "executive_summary",
+  "scope_of_review",
+  "audit_objectives",
+  "methodology",
+  "summary",
+  "section_break_vxfg",
   "engagements",
   "findings",
-  "summary",
-  "status"
+  "status",
+  "summary_section",
+  "total_findings",
+  "open_capas",
+  "overdue_capas",
+  "column_break_mcet",
+  "high_severity_findings",
+  "medium_severity_findings",
+  "low_severity_findings"
  ],
  "fields": [
   {
@@ -49,10 +69,115 @@
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "AREP-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "report_header_section",
+   "fieldtype": "Section Break",
+   "label": "Report Header"
+  },
+  {
+   "fieldname": "report_title",
+   "fieldtype": "Data",
+   "label": "Report Title"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_styc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "Report Date"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "scope_and_context_section",
+   "fieldtype": "Section Break",
+   "label": "Scope and Context"
+  },
+  {
+   "fieldname": "executive_summary",
+   "fieldtype": "Small Text",
+   "label": "Executive Summary"
+  },
+  {
+   "fieldname": "scope_of_review",
+   "fieldtype": "Small Text",
+   "label": "Scope of Review"
+  },
+  {
+   "fieldname": "audit_objectives",
+   "fieldtype": "Small Text",
+   "label": "Audit Objectives"
+  },
+  {
+   "fieldname": "methodology",
+   "fieldtype": "Small Text",
+   "label": "Methodology"
+  },
+  {
+   "fieldname": "section_break_vxfg",
+   "fieldtype": "Section Break",
+   "label": "Engagements and Findings"
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "total_findings",
+   "fieldtype": "Int",
+   "label": "Total Findings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "open_capas",
+   "fieldtype": "Int",
+   "label": "Open CAPAs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overdue_capas",
+   "fieldtype": "Int",
+   "label": "Overdue CAPAs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mcet",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "high_severity_findings",
+   "fieldtype": "Int",
+   "label": "High Severity Findings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "medium_severity_findings",
+   "fieldtype": "Int",
+   "label": "Medium Severity Findings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "low_severity_findings",
+   "fieldtype": "Int",
+   "label": "Low Severity Findings"
   }
  ],
  "links": [],
- "modified": "2025-06-26 04:09:03.567412",
+ "modified": "2026-03-13 18:48:47.154210",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Report",
@@ -62,11 +187,17 @@
   {
    "create": 1,
    "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
    "read": 1,
+   "report": 1,
    "role": "System Manager",
+   "share": 1,
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

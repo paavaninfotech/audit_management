@@ -11,7 +11,9 @@
   "title",
   "description",
   "risk_category",
-  "severity"
+  "severity",
+  "business_process",
+  "business_process_name"
  ],
  "fields": [
   {
@@ -45,11 +47,24 @@
    "fieldtype": "Select",
    "label": "Severity",
    "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "business_process",
+   "fieldtype": "Link",
+   "label": "Business Process",
+   "options": "Audit Business Process"
+  },
+  {
+   "fetch_from": "business_process.process_name",
+   "fieldname": "business_process_name",
+   "fieldtype": "Data",
+   "label": "Business Process Name",
+   "read_only": 1
   }
  ],
  "links": [],
- "modified": "2026-02-02 03:37:10.677908",
- "modified_by": "Administrator",
+ "modified": "2026-03-11 02:44:51.692114",
+ "modified_by": "sales@paavaninfotech.com",
  "module": "Audit Management",
  "name": "Audit Risk",
  "naming_rule": "By fieldname",
@@ -63,6 +78,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "search_fields": "title",
  "show_title_field_in_link": 1,
  "sort_field": "modified",

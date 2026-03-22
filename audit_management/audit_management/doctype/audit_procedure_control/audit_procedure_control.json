@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "creation": "2026-02-03 05:24:54.930222",
  "doctype": "DocType",
@@ -86,8 +87,8 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-03 06:01:22.371116",
- "modified_by": "Administrator",
+ "modified": "2026-03-10 01:25:46.546267",
+ "modified_by": "sales@paavaninfotech.com",
  "module": "Audit Management",
  "name": "Audit Procedure Control",
  "owner": "Administrator",
@@ -105,6 +106,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

@@ -18,6 +18,7 @@ class AuditProcedureRisk(Document):
             {
                 "audit_procedure": self.audit_procedure,
                 "audit_risk": self.audit_risk,
+                "name": ["!=", self.name],
             }
         )
 

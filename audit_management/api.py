@@ -15,17 +15,26 @@ def get_findings_for_engagements(engagement_names):
 
     findings = []
     for engagement in engagement_names:
-        rows = frappe.get_all("Audit Finding", filters={"audit_engagement": engagement}, fields=[
-            "name as finding",
-            "title",
-            "observation",
-            "severity",
-            "root_cause",
-            "risk_impact",
-            "related_process",
-            "audit_engagement"
-        ])
+        rows = frappe.get_all(
+            "Audit Finding",
+            filters={"audit_engagement": engagement},
+            fields=[
+                "name as finding",
+                "title",
+                "observation",
+                "severity",
+                "root_cause",
+                "risk_impact",
+                "recommendation",
+                "management_owner",
+                "target_closure_date",
+                "related_process",
+                "audit_engagement",
+                "status"
+            ]
+        )
         findings.extend(rows)
+
     return findings
 
 @frappe.whitelist()
@@ -33,7 +42,7 @@ def get_findings_for_engagement(audit_engagement):
     return frappe.get_all(
         "Audit Finding",
         filters={"audit_engagement": audit_engagement},
-        fields=["name","finding_title", "description", "severity"]
+        fields=["name","title", "observation", "severity"]
     )
 
 @frappe.whitelist()
@@ -44,12 +53,10 @@ def import_procedures_from_template(template, program):
     for item in template_doc.procedures:
         catalog = frappe.get_doc("Audit Procedure Catalog", item.audit_procedure)
         program_doc.append("procedures", {
-            "procedure_id":catalog.procedure_id,
+            "procedure_id":item.audit_procedure,
             "procedure_title": catalog.procedure_title,
             "expected_outcome": catalog.expected_outcome,
             "test_steps": catalog.test_steps,
-            "related_risk": catalog.related_risk,
-            "related_control": catalog.related_control,
             "status": "Planned"
         })
 

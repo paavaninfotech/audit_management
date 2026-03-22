@@ -8,22 +8,39 @@
  "field_order": [
   "naming_series",
   "reference_finding",
+  "finding_title",
   "category",
   "severity",
   "finding_date",
   "column_break_xqpq",
   "audit_program",
+  "audit_program_title",
   "audit_engagement",
+  "audit_engagement_title",
   "audit_plan",
+  "audit_plan_title",
   "auditable_entity",
+  "auditable_entity_name",
   "section_break_mbif",
   "risk_impact",
   "description",
-  "action_owner",
+  "section_break_teqt",
+  "action_type",
   "target_date",
-  "actual_completion_date",
   "status",
-  "amended_from"
+  "column_break_ttxx",
+  "action_owner",
+  "actual_completion_date",
+  "amended_from",
+  "is_overdue",
+  "section_break_unyh",
+  "root_cause_validated",
+  "verification_method",
+  "evidence_of_closure",
+  "section_break_itev",
+  "closure_validated_by",
+  "column_break_ljbb",
+  "closure_validated_on"
  ],
  "fields": [
   {
@@ -63,7 +80,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Open\nIn Progress\nClosed\nOverdue"
+   "options": "Open\nIn Progress\nPending Verification\nClosed"
   },
   {
    "fieldname": "amended_from",
@@ -148,11 +165,106 @@
    "fieldtype": "Date",
    "label": "Finding Date",
    "read_only": 1
+  },
+  {
+   "fetch_from": "reference_finding.title",
+   "fieldname": "finding_title",
+   "fieldtype": "Data",
+   "label": "Finding Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_program.title",
+   "fieldname": "audit_program_title",
+   "fieldtype": "Data",
+   "label": "Audit Program Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_engagement.engagement_title",
+   "fieldname": "audit_engagement_title",
+   "fieldtype": "Data",
+   "label": "Audit Engagement Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_plan.audit_title",
+   "fieldname": "audit_plan_title",
+   "fieldtype": "Data",
+   "label": "Audit Plan Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "auditable_entity.entity_name",
+   "fieldname": "auditable_entity_name",
+   "fieldtype": "Data",
+   "label": "Auditable Entity Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_type",
+   "fieldtype": "Select",
+   "label": "Action Type",
+   "options": "Corrective\nPreventive"
+  },
+  {
+   "fieldname": "section_break_teqt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ttxx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "root_cause_validated",
+   "fieldtype": "Check",
+   "label": "Root Cause Validated"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_overdue",
+   "fieldtype": "Check",
+   "label": "Is Overdue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_unyh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "verification_method",
+   "fieldtype": "Small Text",
+   "label": "Verification Method"
+  },
+  {
+   "fieldname": "evidence_of_closure",
+   "fieldtype": "Text Editor",
+   "label": "Evidence of Closure"
+  },
+  {
+   "fieldname": "section_break_itev",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "closure_validated_by",
+   "fieldtype": "Link",
+   "label": "Closure Validated By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_ljbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "closure_validated_on",
+   "fieldtype": "Date",
+   "label": "Closure Validated On"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-02 02:55:33.643667",
+ "modified": "2026-03-13 13:59:49.100998",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "CAPA",
@@ -170,6 +282,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

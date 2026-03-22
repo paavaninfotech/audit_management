@@ -36,3 +36,37 @@ class AuditEngagement(Document):
             self.db_set("status", "Completed")
         else:
             self.db_set("status", "In Progress")
+    
+    def validate(self):
+        self.set_engagement_summary()
+
+    def set_engagement_summary(self):
+        self.total_programs = frappe.db.count(
+            "Audit Program",
+            {"audit_engagement": self.name}
+        )
+
+        self.open_findings = frappe.db.count(
+            "Audit Finding",
+            {
+                "audit_engagement": self.name,
+                "status": ["!=", "Closed"]
+            }
+        )
+
+        self.open_capas = frappe.db.count(
+            "CAPA",
+            {
+                "audit_engagement": self.name,
+                "status": ["!=", "Closed"]
+            }
+        )
+
+        self.overdue_capas = frappe.db.count(
+            "CAPA",
+            {
+                "audit_engagement": self.name,
+                "is_overdue": 1,
+                "status": ["!=", "Closed"]
+            }
+        )

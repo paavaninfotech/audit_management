@@ -11,15 +11,26 @@
   "audit_plan",
   "engagement_owner",
   "start_date",
+  "end_date",
   "column_break_ebbb",
   "auditable_entity",
+  "entity_name",
   "status",
-  "end_date",
   "section_break_znzh",
   "scope",
   "objectives",
+  "scoped_business_processes",
   "milestones",
-  "communication_log"
+  "communication_log",
+  "completion_percent",
+  "engagement_summary_section",
+  "total_programs",
+  "open_capas",
+  "completed_programs",
+  "column_break_qvda",
+  "open_findings",
+  "overdue_capas",
+  "closed_findings"
  ],
  "fields": [
   {
@@ -70,13 +81,13 @@
    "options": "Draft\nIn Progress\nCompleted\nOn Hold"
   },
   {
-  "fieldname": "completion_percent",
-  "label": "Completion %",
-  "fieldtype": "Float",
-  "read_only": 1,
-  "in_list_view": 1,
-  "precision": 1,
-  "default": "0.0"
+   "default": "0.0",
+   "fieldname": "completion_percent",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Completion %",
+   "precision": "1",
+   "read_only": 1
   },
   {
    "fieldname": "engagement_owner",
@@ -116,6 +127,64 @@
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "AEN-.YYYY.-.#####"
+  },
+  {
+   "fetch_from": "audit_plan.entity_name",
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "label": "Entity Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "scoped_business_processes",
+   "fieldtype": "Table",
+   "label": "Scoped Business Processes",
+   "options": "Audit Engagement Business Process"
+  },
+  {
+   "fieldname": "engagement_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Engagement Summary"
+  },
+  {
+   "fieldname": "total_programs",
+   "fieldtype": "Int",
+   "label": "Total Programs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "open_capas",
+   "fieldtype": "Int",
+   "label": "Open CAPAs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_programs",
+   "fieldtype": "Int",
+   "label": "Completed Programs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qvda",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "open_findings",
+   "fieldtype": "Int",
+   "label": "Open Findings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overdue_capas",
+   "fieldtype": "Int",
+   "label": "Overdue CAPAs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "closed_findings",
+   "fieldtype": "Int",
+   "label": "Closed Findings",
+   "read_only": 1
   }
  ],
  "links": [
@@ -128,7 +197,7 @@
    "link_fieldname": "audit_engagement"
   }
  ],
- "modified": "2025-06-22 09:35:21.831154",
+ "modified": "2026-03-13 15:37:30.946257",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Engagement",
@@ -143,6 +212,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

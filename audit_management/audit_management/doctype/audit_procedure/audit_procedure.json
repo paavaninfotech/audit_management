@@ -9,9 +9,14 @@
   "procedure_title",
   "expected_outcome",
   "test_steps",
-  "related_risk",
-  "related_control",
-  "status"
+  "status",
+  "performed_by",
+  "performed_on",
+  "reviewed_by",
+  "reviewed_on",
+  "result",
+  "working_paper_reference",
+  "remarks"
  ],
  "fields": [
   {
@@ -39,34 +44,59 @@
    "label": "Test Steps"
   },
   {
-   "fetch_from": "procedure_id.related_risk",
-   "fieldname": "related_risk",
-   "fieldtype": "Link",
-   "label": "Related Risk",
-   "options": "Audit Risk"
-  },
-  {
-   "fetch_from": "procedure_id.related_control",
-   "fieldname": "related_control",
-   "fieldtype": "Link",
-   "label": "Related Control",
-   "options": "Audit Control"
-  },
-  {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nPlanned\nIn Progress\nCompleted"
+   "options": "\nPlanned\nIn Progress\nCompleted\nReviewed\nNot Applicable"
+  },
+  {
+   "fieldname": "performed_by",
+   "fieldtype": "Link",
+   "label": "Performed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "performed_on",
+   "fieldtype": "Date",
+   "label": "Performed On"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "reviewed_on",
+   "fieldtype": "Date",
+   "label": "Reviewed On"
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Select",
+   "label": "Result",
+   "options": "Pass\nException\nNot Applicable"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "working_paper_reference",
+   "fieldtype": "Data",
+   "label": "Working Paper Reference"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2026-02-02 02:54:48.204595",
- "modified_by": "Administrator",
+ "modified": "2026-03-11 21:48:47.640284",
+ "modified_by": "sales@paavaninfotech.com",
  "module": "Audit Management",
  "name": "Audit Procedure",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:audit_title",
+ "autoname": "format:audit_title-{fiscal_year}",
  "creation": "2025-06-21 10:42:30.019603",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,6 +10,7 @@
   "section_break_cwbr",
   "audit_type",
   "auditable_entity",
+  "entity_name",
   "start_date",
   "column_break_cbzf",
   "client",
@@ -118,6 +119,13 @@
   {
    "fieldname": "section_break_gjzw",
    "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "auditable_entity.entity_name",
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "label": "Entity Name",
+   "read_only": 1
   }
  ],
  "links": [
@@ -134,11 +142,11 @@
    "link_fieldname": "audit_plan"
   }
  ],
- "modified": "2026-02-02 02:53:32.393810",
- "modified_by": "Administrator",
+ "modified": "2026-03-11 01:46:04.931519",
+ "modified_by": "sales@paavaninfotech.com",
  "module": "Audit Management",
  "name": "Audit Plan",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -149,6 +157,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

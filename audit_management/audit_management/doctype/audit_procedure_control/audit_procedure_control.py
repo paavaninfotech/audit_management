@@ -18,6 +18,7 @@ class AuditProcedureControl(Document):
             {
                 "audit_procedure": self.audit_procedure,
                 "audit_control": self.audit_control,
+                "name": ["!=", self.name],
             }
         )
 

@@ -12,7 +12,11 @@
   "cause",
   "impact",
   "recommendation",
-  "audit_engagement"
+  "audit_engagement",
+  "related_process",
+  "management_owner",
+  "target_closure_date",
+  "capa_status"
  ],
  "fields": [
   {
@@ -58,16 +62,39 @@
    "fieldtype": "Link",
    "label": "Audit Engagement",
    "options": "Audit Engagement"
+  },
+  {
+   "fieldname": "related_process",
+   "fieldtype": "Link",
+   "label": "Related Process",
+   "options": "Audit Business Process"
+  },
+  {
+   "fieldname": "management_owner",
+   "fieldtype": "Link",
+   "label": "Management Owner",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "target_closure_date",
+   "fieldtype": "Date",
+   "label": "Target Closure Date"
+  },
+  {
+   "fieldname": "capa_status",
+   "fieldtype": "Data",
+   "label": "Capa Status"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2026-02-02 02:55:07.468058",
+ "modified": "2026-03-22 14:38:48.699151",
  "modified_by": "Administrator",
  "module": "Audit Management",
  "name": "Audit Report Finding",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

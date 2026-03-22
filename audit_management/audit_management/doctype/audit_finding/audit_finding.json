@@ -1,175 +1,276 @@
 {
-  "actions": [],
-  "autoname": "naming_series:naming_series",
-  "creation": "2025-06-21 11:44:25.730455",
-  "doctype": "DocType",
-  "engine": "InnoDB",
-  "field_order": [
-    "naming_series",
-    "title",
-    "section_break_ayvg",
-    "audit_program",
-    "finding_date",
-    "category",
-    "severity",
-    "column_break_evbn",
-    "audit_engagement",
-    "audit_plan",
-    "auditable_entity",
-    "section_break_akro",
-    "observation",
-    "root_cause",
-    "risk_impact",
-    "status",
-    "communication_log",
-    "attachments"
-  ],
-  "fields": [
-    {
-      "fieldname": "title",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "Finding Title",
-      "reqd": 1
-    },
-    {
-      "fetch_from": "audit_program.audit_engagement",
-      "fieldname": "audit_engagement",
-      "fieldtype": "Link",
-      "in_list_view": 1,
-      "label": "Audit Engagement",
-      "options": "Audit Engagement",
-      "search_index": 1
-    },
-    {
-      "fieldname": "audit_program",
-      "fieldtype": "Link",
-      "label": "Audit Program",
-      "options": "Audit Program",
-      "reqd": 1,
-      "search_index": 1
-    },
-    {
-      "fieldname": "finding_date",
-      "fieldtype": "Date",
-      "label": "Finding Date"
-    },
-    {
-      "fieldname": "category",
-      "fieldtype": "Select",
-      "label": "Category",
-      "options": "Compliance\nOperational\nFinancial\nStrategic\nIT\nOther"
-    },
-    {
-      "fieldname": "severity",
-      "fieldtype": "Select",
-      "label": "Severity",
-      "options": "Low\nMedium\nHigh"
-    },
-    {
-      "fieldname": "observation",
-      "fieldtype": "Text",
-      "label": "Observation"
-    },
-    {
-      "fieldname": "root_cause",
-      "fieldtype": "Text",
-      "label": "Root Cause"
-    },
-    {
-      "fieldname": "risk_impact",
-      "fieldtype": "Text",
-      "label": "Risk / Impact"
-    },
-    {
-      "fieldname": "status",
-      "fieldtype": "Select",
-      "label": "Status",
-      "options": "Open\nUnder Review\nClosed"
-    },
-    {
-      "fieldname": "communication_log",
-      "fieldtype": "Table",
-      "label": "Communication Log",
-      "options": "Communication Log Entry"
-    },
-    {
-      "fieldname": "attachments",
-      "fieldtype": "Attach",
-      "label": "Attachments"
-    },
-    {
-      "fieldname": "section_break_ayvg",
-      "fieldtype": "Section Break"
-    },
-    {
-      "fieldname": "column_break_evbn",
-      "fieldtype": "Column Break"
-    },
-    {
-      "fetch_from": "audit_engagement.audit_plan",
-      "fieldname": "audit_plan",
-      "fieldtype": "Link",
-      "label": "Audit Plan",
-      "options": "Audit Plan",
-      "read_only": 1,
-      "search_index": 1
-    },
-    {
-      "fetch_from": "audit_plan.auditable_entity",
-      "fieldname": "auditable_entity",
-      "fieldtype": "Link",
-      "label": "Auditable Entity",
-      "options": "Auditable Entity",
-      "read_only": 1,
-      "search_index": 1
-    },
-    {
-      "fieldname": "section_break_akro",
-      "fieldtype": "Section Break"
-    },
-    {
-      "fieldname": "naming_series",
-      "fieldtype": "Select",
-      "label": "Naming Series",
-      "options": "AFIN-.YYYY.-.#####"
-    },
-    {
-      "fieldname": "related_risk",
-      "label": "Related Risk",
-      "fieldtype": "Link",
-      "options": "Audit Risk"
-    },
-    {
-      "fieldname": "related_control",
-      "label": "Related Control",
-      "fieldtype": "Link",
-      "options": "Audit Control"
-    },
-    {
-      "fieldname": "related_process",
-      "label": "Related Business Process",
-      "fieldtype": "Link",
-      "options": "Audit Business Process"
-    }
-  ],
-  "links": [],
-  "modified": "2025-06-22 09:55:17.797963",
-  "modified_by": "Administrator",
-  "module": "Audit Management",
-  "name": "Audit Finding",
-  "naming_rule": "By \"Naming Series\" field",
-  "owner": "Administrator",
-  "permissions": [
-    {
-      "create": 1,
-      "delete": 1,
-      "read": 1,
-      "role": "System Manager",
-      "write": 1
-    }
-  ],
-  "sort_field": "modified",
-  "sort_order": "DESC",
-  "states": []
+ "actions": [],
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-06-21 11:44:25.730455",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "section_break_ayvg",
+  "procedure_id",
+  "audit_program",
+  "audit_program_title",
+  "finding_date",
+  "category",
+  "severity",
+  "management_owner",
+  "target_closure_date",
+  "column_break_evbn",
+  "procedure_title",
+  "audit_engagement",
+  "engagement_title",
+  "audit_plan",
+  "audit_plan_title",
+  "auditable_entity",
+  "auditable_entity_name",
+  "section_break_akro",
+  "observation",
+  "root_cause",
+  "risk_impact",
+  "recommendation",
+  "status",
+  "related_risks_section",
+  "related_risks",
+  "related_controls_section",
+  "related_controls",
+  "section_break_jpkw",
+  "communication_log",
+  "attachments",
+  "related_process",
+  "related_business_process_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Finding Title",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "audit_program.audit_engagement",
+   "fieldname": "audit_engagement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Audit Engagement",
+   "options": "Audit Engagement",
+   "search_index": 1
+  },
+  {
+   "fieldname": "audit_program",
+   "fieldtype": "Link",
+   "label": "Audit Program",
+   "options": "Audit Program",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "finding_date",
+   "fieldtype": "Date",
+   "label": "Finding Date"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Compliance\nOperational\nFinancial\nStrategic\nIT\nOther"
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Text",
+   "label": "Observation"
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Text",
+   "label": "Root Cause"
+  },
+  {
+   "fieldname": "risk_impact",
+   "fieldtype": "Text",
+   "label": "Risk / Impact"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nUnder Review\nClosed"
+  },
+  {
+   "fieldname": "communication_log",
+   "fieldtype": "Table",
+   "label": "Communication Log",
+   "options": "Communication Log Entry"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "section_break_ayvg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_evbn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "audit_engagement.audit_plan",
+   "fieldname": "audit_plan",
+   "fieldtype": "Link",
+   "label": "Audit Plan",
+   "options": "Audit Plan",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "audit_plan.auditable_entity",
+   "fieldname": "auditable_entity",
+   "fieldtype": "Link",
+   "label": "Auditable Entity",
+   "options": "Auditable Entity",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_akro",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "AFIN-.YYYY.-.#####"
+  },
+  {
+   "fetch_from": "audit_program.business_process",
+   "fieldname": "related_process",
+   "fieldtype": "Link",
+   "label": "Related Business Process",
+   "options": "Audit Business Process"
+  },
+  {
+   "fetch_from": "audit_program.title",
+   "fieldname": "audit_program_title",
+   "fieldtype": "Data",
+   "label": "Audit Program Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_engagement.engagement_title",
+   "fieldname": "engagement_title",
+   "fieldtype": "Data",
+   "label": "Engagement Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "audit_plan.audit_title",
+   "fieldname": "audit_plan_title",
+   "fieldtype": "Data",
+   "label": "Audit Plan Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "auditable_entity.entity_name",
+   "fieldname": "auditable_entity_name",
+   "fieldtype": "Data",
+   "label": "Auditable Entity Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "related_process.process_name",
+   "fieldname": "related_business_process_name",
+   "fieldtype": "Data",
+   "label": "Related Business Process Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recommendation",
+   "fieldtype": "Text",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "management_owner",
+   "fieldtype": "Link",
+   "label": "Management Owner",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "target_closure_date",
+   "fieldtype": "Date",
+   "label": "Target Closure Date"
+  },
+  {
+   "fieldname": "related_risks_section",
+   "fieldtype": "Section Break",
+   "label": "Related Risks"
+  },
+  {
+   "fieldname": "related_risks",
+   "fieldtype": "Table",
+   "label": "Related Risks",
+   "options": "Audit Finding Risk"
+  },
+  {
+   "fieldname": "related_controls_section",
+   "fieldtype": "Section Break",
+   "label": "Related Controls"
+  },
+  {
+   "fieldname": "related_controls",
+   "fieldtype": "Table",
+   "label": "Related Controls",
+   "options": "Audit Finding Control"
+  },
+  {
+   "fieldname": "section_break_jpkw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "procedure_id",
+   "fieldtype": "Link",
+   "label": "Procedure ID",
+   "options": "Audit Procedure Catalog"
+  },
+  {
+   "fetch_from": "procedure_id.procedure_title",
+   "fieldname": "procedure_title",
+   "fieldtype": "Data",
+   "label": "Procedure Title",
+   "read_only": 1
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "CAPA",
+   "link_fieldname": "reference_finding"
+  }
+ ],
+ "modified": "2026-03-13 01:44:34.979784",
+ "modified_by": "Administrator",
+ "module": "Audit Management",
+ "name": "Audit Finding",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
 }
